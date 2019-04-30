@@ -9,7 +9,7 @@
 
 #include <fuzzy_table.h>
 #include <PID_Beta6.h>
-jhkjkjh
+
 /*
 
             \                    /
