@@ -407,7 +407,7 @@ void Omni4WD::triangle(unsigned int speedMMPS,unsigned int duration,
 		unsigned int uptime,bool debug) {
 		int (Omni4WD::*carAction[])(int speedMMPS)={
 		&Omni4WD::setCarUpperLeft,
-		&Omni4WD::setCarLowerRight,
+		&Omni4WD::setCarLowerLeft,
 		&Omni4WD::setCarRight,
 	};
 	
