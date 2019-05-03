@@ -1,4 +1,3 @@
-coucou remi
 #include <PinChangeInt.h>
 #include <PinChangeIntConfig.h>
 #include <EEPROM.h>
@@ -61,7 +60,6 @@ void setup() {
   TCCR2B=TCCR2B&0xf8|0x01;    // Pin3,Pin11 PWM 31250Hz
     
   Omni.PIDEnable(0.31,0.01,0,10);
-    
 }
 void loop() {
   Omni.carre(30,1500,500,false);

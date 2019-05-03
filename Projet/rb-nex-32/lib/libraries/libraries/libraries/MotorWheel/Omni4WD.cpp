@@ -403,6 +403,30 @@ void Omni4WD::rectangle(unsigned int speedMMPS,unsigned int duration,
 	//switchMotors();
 }
 
+void Omni4WD::triangle(unsigned int speedMMPS,unsigned int duration,
+		unsigned int uptime,bool debug) {
+		int (Omni4WD::*carAction[])(int speedMMPS)={
+		&Omni4WD::setCarUpperLeft,
+		&Omni4WD::setCarLowerRight,
+		&Omni4WD::setCarRight,
+	};
+	
+		(this->*carAction[0])(0); // default parameters not available in function pointer
+		setCarSpeedMMPS(speedMMPS,uptime);
+		delayMS(duration,debug);
+		setCarSlow2Stop(uptime);
+		(this->*carAction[1])(0); // default parameters not available in function pointer
+		setCarSpeedMMPS(speedMMPS,uptime);
+		delayMS(duration,debug);
+		setCarSlow2Stop(uptime);
+		(this->*carAction[2])(0); // default parameters not available in function pointer
+		setCarSpeedMMPS(speedMMPS,uptime);
+		delayMS(duration,debug);
+		setCarSlow2Stop(uptime);
+	setCarStop();
+	delayMS(duration);
+	//switchMotors();
+}
 
 void Omni4WD::carre(unsigned int speedMMPS,unsigned int duration,
 		unsigned int uptime,bool debug) {
